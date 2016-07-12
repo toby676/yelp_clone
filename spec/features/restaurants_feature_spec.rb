@@ -33,7 +33,7 @@ feature 'restaurants' do
   end
 
   context 'viewing restaurants' do
-
+  
   let!(:kfc){ Restaurant.create(name:'KFC') }
 
   scenario 'lets a user view a restaurant' do
@@ -43,6 +43,6 @@ feature 'restaurants' do
     expect(current_path).to eq "/restaurants/#{kfc.id}"
   end
 
-end
+  end
 
 end
