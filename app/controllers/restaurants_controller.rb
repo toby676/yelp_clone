@@ -11,7 +11,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant = Restaurant.build_with_user(review_params, current_user)
     if @restaurant.save
       redirect_to '/restaurants'
     else
