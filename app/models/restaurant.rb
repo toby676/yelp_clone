@@ -1,4 +1,7 @@
 class Restaurant < ActiveRecord::Base
+
+  extend WithUserAssociationExtension
+
   belongs_to :user
   has_many :reviews,
         -> { extending WithUserAssociationExtension },
